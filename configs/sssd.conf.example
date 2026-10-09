@@ -1,0 +1,28 @@
+# /etc/sssd/sssd.conf  (mode 0600, owner root:root)
+[sssd]
+services = nss, pam
+domains = lab.local
+
+[domain/lab.local]
+id_provider = ldap
+auth_provider = ldap
+ldap_schema = rfc2307
+
+ldap_uri = ldap://ldap.lab.local
+ldap_id_use_start_tls = true
+ldap_tls_cacert = /etc/pki/ca-trust/source/anchors/lab-root-ca.crt
+ldap_tls_reqcert = demand
+
+ldap_search_base = dc=lab,dc=local
+ldap_user_search_base = ou=People,dc=lab,dc=local
+ldap_group_search_base = ou=Groups,dc=lab,dc=local
+
+ldap_default_bind_dn = uid=sssd-bind,ou=Services,dc=lab,dc=local
+ldap_default_authtok = CHANGE_ME
+
+# Authorization: only members of this group may log in to this host
+access_provider = simple
+simple_allow_groups = sysadmins
+
+cache_credentials = true
+enumerate = false
