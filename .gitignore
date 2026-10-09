@@ -1,0 +1,11 @@
+# Never commit secrets or key material
+ca/
+.DS_Store
+*.key
+*.csr
+*.srl
+lab.inf
+sssd.conf
+*.bak
+*.ldif.export
+
