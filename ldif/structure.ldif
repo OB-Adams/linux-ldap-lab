@@ -1,0 +1,52 @@
+dn: ou=People,dc=lab,dc=local
+objectClass: top
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Groups,dc=lab,dc=local
+objectClass: top
+objectClass: organizationalUnit
+ou: Groups
+
+dn: cn=ldapusers,ou=Groups,dc=lab,dc=local
+objectClass: top
+objectClass: posixGroup
+cn: ldapusers
+gidNumber: 10000
+
+dn: cn=sysadmins,ou=Groups,dc=lab,dc=local
+objectClass: top
+objectClass: posixGroup
+cn: sysadmins
+gidNumber: 10001
+memberUid: kofi
+
+dn: uid=kofi,ou=People,dc=lab,dc=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: posixAccount
+uid: kofi
+cn: Kofi Mensah
+sn: Mensah
+givenName: Kofi
+uidNumber: 10001
+gidNumber: 10000
+homeDirectory: /home/kofi
+loginShell: /bin/bash
+
+dn: uid=ama,ou=People,dc=lab,dc=local
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: posixAccount
+uid: ama
+cn: Ama Boateng
+sn: Boateng
+givenName: Ama
+uidNumber: 10002
+gidNumber: 10000
+homeDirectory: /home/ama
+loginShell: /bin/bash

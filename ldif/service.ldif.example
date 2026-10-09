@@ -1,0 +1,13 @@
+# Load over StartTLS, then delete this file. Change the password immediately
+# with ldappasswd; never commit a real password.
+dn: ou=Services,dc=lab,dc=local
+objectClass: top
+objectClass: organizationalUnit
+ou: Services
+
+dn: uid=sssd-bind,ou=Services,dc=lab,dc=local
+objectClass: top
+objectClass: account
+objectClass: simpleSecurityObject
+uid: sssd-bind
+userPassword: temporary-change-me

@@ -1,0 +1,9 @@
+dn: ou=People,dc=lab,dc=local
+changetype: modify
+add: aci
+aci: (targetattr != "userPassword")(version 3.0; acl "sssd-bind read people"; allow (read, search, compare) userdn = "ldap:///uid=sssd-bind,ou=Services,dc=lab,dc=local";)
+
+dn: ou=Groups,dc=lab,dc=local
+changetype: modify
+add: aci
+aci: (targetattr != "userPassword")(version 3.0; acl "sssd-bind read groups"; allow (read, search, compare) userdn = "ldap:///uid=sssd-bind,ou=Services,dc=lab,dc=local";)
