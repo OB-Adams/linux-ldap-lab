@@ -1,0 +1,6 @@
+[Unit]
+Description=389-ds backup (instance lab)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/ldap-backup.sh
