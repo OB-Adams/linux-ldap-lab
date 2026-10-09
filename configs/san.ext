@@ -1,0 +1,4 @@
+subjectAltName = DNS:ldap.lab.local
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
